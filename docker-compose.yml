@@ -10,3 +10,31 @@ services:
       - CRON_HOUR=${CRON_HOUR}
     network_mode: "host"
 # use network_mode 'host' only if your db service are in other container in the same machine
+
+  mongo-db:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=backup123
+      - MONGO_INITDB_DATABASE=Backup
+    ports:
+      - 27019:27017
+    networks:
+      - backup
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - backup
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 123
+      ME_CONFIG_MONGODB_URL: mongodb://root:backup123@mongo-db:27017
+
+networks:
+  backup:
+    driver: bridge
