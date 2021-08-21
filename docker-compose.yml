@@ -9,8 +9,8 @@ services:
       - CRON_MIN=${CRON_MIN}
       - CRON_HOUR=${CRON_HOUR}
     network_mode: "host"
-# use network_mode 'host' only if your db service are in other container in the same machine
-
+# use network_mode 'host' apenas se o banco de dados estiver na mesma máquina mas em outro container
+# se estiver em outra máquina use o networks: - backup para conectar a mongo-db igual o mongo-express
   mongo-db:
     image: mongo
     restart: always
