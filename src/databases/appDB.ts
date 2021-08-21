@@ -1,4 +1,5 @@
 import mongoose, { Connection, Model } from 'mongoose'
+require('dotenv').config()
 
 const conn = mongoose.createConnection(`${process.env.DB_APP_URL}`,
 {

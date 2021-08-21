@@ -1,4 +1,5 @@
 import mongoose, { Connection, Model } from 'mongoose'
+require('dotenv').config()
 import BackupSchema from '../model/Backup'
 
 const conn = mongoose.createConnection(`${process.env.DB_BACKUP_URL}`,
