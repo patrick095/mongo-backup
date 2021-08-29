@@ -2,7 +2,6 @@ services:
   mongo-backup:
     build: .
     restart: always
-    # image: mongo
     environment: 
       - DB_APP_URL=${DB_APP_URL}
       - DB_BACKUP_URL=mongodb://root:backup123@mongo-db:27017
