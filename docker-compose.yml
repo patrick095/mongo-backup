@@ -5,7 +5,7 @@ services:
     # image: mongo
     environment: 
       - DB_APP_URL=${DB_APP_URL}
-      - DB_BACKUP_URL=${DB_BACKUP_URL}
+      - DB_BACKUP_URL=mongodb://root:backup123@mongo-db:27017
       - CRON_MIN=${CRON_MIN}
       - CRON_HOUR=${CRON_HOUR}
     network_mode: "host"
@@ -18,8 +18,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=backup123
       - MONGO_INITDB_DATABASE=Backup
-    ports:
-      - 27019:27017
+    # ports:
+    #   - 27019:27017
     networks:
       - backup
 
