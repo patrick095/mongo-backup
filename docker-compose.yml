@@ -31,8 +31,8 @@ services:
     networks:
       - backup
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: 123
+      ME_CONFIG_BASICAUTH_USERNAME: root
+      ME_CONFIG_BASICAUTH_PASSWORD: 123
       ME_CONFIG_MONGODB_URL: mongodb://root:backup123@mongo-db:27017
 
 networks:
