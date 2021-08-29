@@ -17,8 +17,8 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=backup123
       - MONGO_INITDB_DATABASE=Backup
-    # ports:
-    #   - 27019:27017
+    ports:
+      - 27018:27017
     networks:
       - backup
 

@@ -19,6 +19,6 @@ export default async function dbRestore(name?: string) {
     const child = shell.exec(cmd, {async: true})
     child.stdout.on('data', data => console.log(data))
     child.stdout.on('end', () =>{
-        console.log('backup finalizado com sucesso!')
+        console.log('restauração finalizada com sucesso!')
     })
 }
