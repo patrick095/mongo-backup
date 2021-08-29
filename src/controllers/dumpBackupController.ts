@@ -6,7 +6,7 @@ import shell from 'shelljs'
 import rootDir from '../../config'
 
 var dbOptions =  {
-    uri: process.env.MONGODB_URL,
+    uri: process.env.DB_APP_URL,
     removeOldBackup: true,
     keepLastDaysBackup: 2,
     BackupPath: rootDir+'/backup/'
